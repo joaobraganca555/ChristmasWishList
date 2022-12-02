@@ -14,7 +14,7 @@ export default function Home() {
         <div className={styles.divTitle}>
           <h1 className={styles.title}>Bem vindo à lista de prendas!</h1>
           <Image
-            src="/../public/gift.png"
+            src="../public/gift.png"
             alt="Gift"
             width={100}
             height={100}

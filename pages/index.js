@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import giftPic from "../public/gift.png";
 
 export default function Home() {
   return (
@@ -13,12 +14,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.divTitle}>
           <h1 className={styles.title}>Bem vindo à lista de prendas!</h1>
-          <Image
-            src="../public/gift.png"
-            alt="Gift"
-            width={100}
-            height={100}
-          />
+          <Image src={giftPic} alt="Gift" width={100} height={100} />
         </div>
 
         <p className={styles.description}>

@@ -26,10 +26,6 @@
   transition: color 0.15s ease;
 }
 
-.divider {
-  margin: 20px 20px;
-}
-
 .arrowBack:hover,
 .arrowBack:focus,
 .arrowBack:active {
@@ -57,11 +53,11 @@
 }
 
 /* .card:hover,
-.card:focus,
-.card:active {
-  color: #f03838;
-  border-color: #f03838;
-} */
+  .card:focus,
+  .card:active {
+    color: #f03838;
+    border-color: #f03838;
+  } */
 
 .card h2 {
   margin: 0 0 1rem 0;

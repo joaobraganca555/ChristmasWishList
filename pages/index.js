@@ -27,10 +27,11 @@ export default function Home() {
             <p>Crie a sua lista de prendas!</p>
           </Link>
 
-          <a href="/viewLists" className={styles.card}>
+
+          <Link href="/viewLists" className={styles.card}>
             <h2>Ver listas &rarr;</h2>
             <p>Veja todas as outras listas!</p>
-          </a>
+          </Link>
         </div>
       </main>
 

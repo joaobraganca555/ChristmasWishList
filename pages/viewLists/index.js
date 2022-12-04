@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "../../styles/CreateList.module.css";
 
 export async function getServerSideProps(context) {
-  let res = await fetch(`https://${VERCEL_URL}/api/lists`, {
+  let res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/lists`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

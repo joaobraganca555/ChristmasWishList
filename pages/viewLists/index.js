@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import styles from "../../styles/ViewLists.module.css";
 import {
-  Card,
-  CardContent,
-  CardHeader,
   CircularProgress,
   Divider,
   List,
@@ -10,12 +10,9 @@ import {
   ListSubheader,
   Typography,
 } from "@mui/material";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import styles from "../../styles/ViewLists.module.css";
 import LabelOutlinedIcon from "@mui/icons-material/LabelOutlined";
 
-export default function ViewLists({ allLists }) {
+export default function ViewLists() {
   const [lists, setLists] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,7 +21,7 @@ export default function ViewLists({ allLists }) {
     const resultsJson = await results.json();
     setLists(resultsJson.data);
   }
-  
+
   useEffect(() => {
     setIsLoading(true);
     fetchData();
@@ -46,6 +43,7 @@ export default function ViewLists({ allLists }) {
             <Typography variant="h6">
               {isLoading ? "List" : list.listName}
             </Typography>
+            <Divider />
             <List
               subheader={
                 <ListSubheader component="div" id="nested-list-subheader">

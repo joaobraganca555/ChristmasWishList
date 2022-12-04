@@ -1,21 +1,19 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import styles from "../../styles/CreateList.module.css";
 
-export async function getServerSideProps(context) {
-  let res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/lists`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  let allLists = await res.json();
-
-  return {
-    props: { allLists },
-  };
-}
-
 export default function CreateList({ allLists }) {
+  const [lists, setLists] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const results = await fetch("/api/lists");
+      const resultsJson = await results.json();
+      console.log(resultsJson);
+      setLists(resultsJson.data[0]);
+    })();
+  }, []);
+
   return (
     <main className={styles.main}>
       <div className={styles.divTitle}>
@@ -28,10 +26,9 @@ export default function CreateList({ allLists }) {
       <div className={styles.grid}>
         <a className={styles.card}>
           <ul>
-            {console.log(process.env)}
-            {/* {allLists.data[0].items.map((i) => (
+            {lists?.items?.map((i) => (
               <li key={`item+${i}`}>{i}</li>
-            ))} */}
+            ))}
           </ul>
         </a>
       </div>

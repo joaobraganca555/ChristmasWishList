@@ -22,7 +22,7 @@ export default function ViewLists() {
     setIsLoading(true);
     const results = await fetch("/api/lists");
     setIsLoading(false);
-    const resultsJson = await results.json();
+    const resultsJson = results.json();
     setLists(resultsJson.data);
   }
 
